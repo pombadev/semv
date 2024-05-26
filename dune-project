@@ -1,0 +1,25 @@
+(lang dune 3.15)
+
+(name semv)
+
+(generate_opam_files true)
+
+(source
+ (github pombadev/semv))
+
+(bug_reports https://github.com/pombadev/semv/issues)
+
+(homepage https://github.com/pombadev/semv)
+
+(authors "pombadev")
+
+(maintainers "pombadev")
+
+(license Apache-2.0)
+
+(package
+ (name semv)
+ (synopsis "Bump a semver")
+ (depends ocaml-lsp-server ocamlformat semantic_version)
+ (tags
+  (semver cli)))
