@@ -1,1 +1,5 @@
 profile = ocamlformat
+space-around-records
+sequence-style = terminator
+break-separators = after
+dock-collection-brackets

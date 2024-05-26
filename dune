@@ -1,4 +1,4 @@
 (executable
  (public_name semv)
  (name main)
- (libraries semantic_version))
+ (libraries unix semantic_version))

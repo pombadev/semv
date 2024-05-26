@@ -20,6 +20,6 @@
 (package
  (name semv)
  (synopsis "Bump a semver")
- (depends ocaml-lsp-server ocamlformat semantic_version)
+ (depends unix ocaml-lsp-server ocamlformat semantic_version)
  (tags
   (semver cli)))
