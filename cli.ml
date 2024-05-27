@@ -12,15 +12,6 @@ let part = ref None
 
 let preserve = ref false
 
-let read_input () =
-  let buffer = Buffer.create 1024 in
-  try
-    while true do
-      Buffer.add_channel buffer stdin 1
-    done;
-    Buffer.contents buffer
-  with End_of_file -> Buffer.contents buffer
-
 let die msg =
   prerr_endline ("semv: " ^ msg);
   exit 1
@@ -46,9 +37,9 @@ let parse () =
       usage
   in
   let version =
-    let is_pipe = Unix.isatty Unix.stdin |> not in
+    let is_pipe = not Unix.(isatty stdin) in
     let version =
-      if is_pipe then read_input ()
+      if is_pipe then In_channel.(input_all stdin)
       else
         match !input with Some ver -> ver | None -> die "<input> is required"
     in

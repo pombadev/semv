@@ -11,7 +11,7 @@ let print_semver ~old ~current =
   in
   print_endline (Semver.to_string current ^ if !preserve then info else "")
 
-let incr ~part ~version =
+let incr ({ part; version } : Cli.t) =
   let updated =
     match part with
     | `Major ->
@@ -23,6 +23,4 @@ let incr ~part ~version =
   in
   print_semver ~old:version ~current:updated
 
-let () =
-  let { part; version } = Cli.parse () in
-  incr ~part ~version
+let () = Cli.parse () |> incr
