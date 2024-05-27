@@ -2,14 +2,14 @@ open Cli
 
 let print_semver ~old ~current =
   let info =
-    let ret = ref "" in
-    let pre = Semver.pre_release_tags old |> String.concat "" in
-    let build = Semver.build_metadata old |> String.concat "" in
-    if String.length pre > 0 then ret := !ret ^ "-" ^ pre;
-    if String.length build > 0 then ret := !ret ^ "+" ^ build;
-    !ret
+    if !preserve then
+      let pre = Semver.pre_release_tags old |> String.concat "" in
+      let build = Semver.build_metadata old |> String.concat "" in
+      let pre = if String.length pre > 0 then "-" ^ pre else "" in
+      if String.length build > 0 then pre ^ "+" ^ build else pre
+    else ""
   in
-  print_endline (Semver.to_string current ^ if !preserve then info else "")
+  print_endline (Semver.to_string current ^ info)
 
 let incr ({ part; version } : Cli.t) =
   let updated =
