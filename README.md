@@ -1,6 +1,6 @@
 # SEMV
 
-semv is tool written in ocaml to bump [semver](semver.org).
+semv is tool written in ocaml to bump [semver](https://semver.org).
 
 ## Installation
 
@@ -31,7 +31,9 @@ semv -major 1.0.1-alpha+74a1c58b -preserve # 2.0.1-alpha+74a1c58b
 ```
 
 ## Contributing
+
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
+
 [Apache-2.0](https://choosealicense.com/licenses/apache-2.0/)

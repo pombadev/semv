@@ -2,6 +2,8 @@
 
 (name semv)
 
+(version 1.0.0)
+
 (generate_opam_files true)
 
 (source
@@ -20,6 +22,6 @@
 (package
  (name semv)
  (synopsis "Bump a semver")
- (depends unix ocaml-lsp-server ocamlformat semantic_version)
+ (depends unix semantic_version)
  (tags
   (semver cli)))
