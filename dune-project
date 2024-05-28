@@ -22,6 +22,6 @@
 (package
  (name semv)
  (synopsis "Bump a semver")
- (depends unix semantic_version)
+ (depends (semantic_version (= v0.16.0)))
  (tags
   (semver cli)))
